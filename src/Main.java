@@ -12,7 +12,7 @@ public class Main extends PApplet {
 	PImage prevFrame;
 	 
 	
-	float threshold = 200;
+	float threshold = 200;//Used to determine how sensitive to movement the ball is
 	int Mx = 0;
 	int My = 0;
 	int ave = 0;
@@ -23,9 +23,9 @@ public class Main extends PApplet {
 	
 	public void setup() {
 	  size(640, 480);
-	  video = new Capture(this, width, height, 30);
+	  video = new Capture(this, width, height, 30);//initialising the webcam
 	  video.start();
-	  prevFrame = createImage(video.width, video.height, RGB);
+	  prevFrame = createImage(video.width, video.height, RGB);//Creates a new PImage
 	}
 	 
 	public void draw() {
@@ -47,8 +47,10 @@ public class Main extends PApplet {
 	  ave = 0;
 	 
 	 
-	  for (int x = 0; x < video.width; x ++ ) {
-	    for (int y = 0; y < video.height; y ++ ) {
+	  for (int x = 0; x < video.width; x ++ )//Checks each pixel and compares the color changes to detect movement
+	  {
+	    for (int y = 0; y < video.height; y ++ ) 
+	    {
 	 
 	      int loc = x + y*video.width;            
 	      int current = video.pixels[loc];      
@@ -63,33 +65,40 @@ public class Main extends PApplet {
 	      float diff = dist(r1, g1, b1, r2, g2, b2);
 	
 	 
-	      if (diff > threshold) { 
+	      if (diff > threshold) 
+	      { 
 	        pixels[loc] = video.pixels[loc];
 	        Mx += x;
 	        My += y;
 	        ave++;
 	      } 
-	      else {
+	      else 
+	      {
 	 
 	        pixels[loc] = video.pixels[loc];
 	      }
 	    }
 	  }
 	
-	  if (ave != 0) { 
+	  if (ave != 0) 
+	  { 
 	    Mx = Mx/ave;
 	    My = My/ave;
 	  }
-	  if (Mx > ballX + rsp/2 && Mx > 50) {
+	  if (Mx > ballX + rsp/2 && Mx > 50) 
+	  {
 	    ballX+= rsp;
 	  }
-	  else if (Mx < ballX - rsp/2 && Mx > 50) {
+	  else if (Mx < ballX - rsp/2 && Mx > 50) 
+	  {
 	    ballX-= rsp;
 	  }
-	  if (My > ballY + rsp/2 && My > 50) {
+	  if (My > ballY + rsp/2 && My > 50) 
+	  {
 	    ballY+= rsp;
 	  }
-	  else if (My < ballY - rsp/2 && My > 50) {
+	  else if (My < ballY - rsp/2 && My > 50) 
+	  {
 	    ballY-= rsp;
 	  }
 	 
