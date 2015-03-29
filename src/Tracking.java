@@ -3,7 +3,7 @@ import processing.video.*;
 import processing.core.*;
 
 public class Tracking {
-  PApplet parent; // The parent PApplet that we will render ourselves onto
+  PApplet parent; // The parent PApplet allows us to uses classes while being able to use processing funtions outside main class
   
   PImage prevFrame;
   
@@ -25,7 +25,7 @@ public class Tracking {
 	threshold = 200;
 	ballX = parent.width/8;
 	ballY = parent.height/8;
-	rsp = 3;
+	rsp = 6;
   }
 
   // Draw stripe
@@ -37,11 +37,12 @@ public class Tracking {
 		    prevFrame.updatePixels();
 		    Main.video.read();
 		  }
-		 
+
+	  
 	      parent.loadPixels();
 		  Main.video.loadPixels();
 		  prevFrame.loadPixels();
-		 
+		  
 		  Mx = 0;
 		  My = 0;
 		  ave = 0;
@@ -101,18 +102,18 @@ public class Tracking {
 		  {
 		    ballY-= rsp;
 		  }
-		 
+		  
 		  parent.updatePixels();
 		  parent.noStroke();
 		  parent.fill(0, 0, 255);
 		  parent.ellipse(ballX, ballY, 20, 20);
 		  
-		  if(ballX > parent.width/2 + 40)
+		  if(ballX > parent.width/2 + 70)
 		  {
 			  parent.rect(parent.width/2 + 130, parent.height/2 - 80, 60, 40);
 		  }
 		  
-		  if(ballX < parent.width/2 - 40)
+		  if(ballX < parent.width/2 - 70)
 		  {  
 			  parent.rect(parent.width/2 - 190, parent.height/2 - 80, 60, 40);
 		  }
