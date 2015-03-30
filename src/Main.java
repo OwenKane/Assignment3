@@ -24,7 +24,7 @@ public class Main extends PApplet {
   }
 
   public void draw() {
-	  screen.SplashS();
+	  screen.display();
 	  tracking.display();
 	  for (int i = 0; i < object.length; i++) {
 		  object[i].display();
