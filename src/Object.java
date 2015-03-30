@@ -1,4 +1,6 @@
 import processing.core.PApplet;
+import processing.video.*;
+import processing.core.*;
 
 public class Object {
   PApplet parent;
