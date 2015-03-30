@@ -12,8 +12,6 @@ public class Tracking {
   int My;
   int ave;
 	 
-  int ballX;
-  int ballY;
   int rsp;//Used to control the speed the tracking ball moves at
   
   
@@ -23,8 +21,8 @@ public class Tracking {
 	prevFrame = parent.createImage(Main.video.width, Main.video.height, parent.RGB);//Creates a new PImage
 	
 	threshold = 200;
-	ballX = parent.width/8;
-	ballY = parent.height/8;
+	Main.ballX = parent.width/8;
+	Main.ballY = parent.height/8;
 	rsp = 6;
   }
 
@@ -86,37 +84,28 @@ public class Tracking {
 		    Mx = Mx/ave;
 		    My = My/ave;
 		  }
-		  if (Mx > ballX + rsp/2 && Mx > 50) 
+		  if (Mx > Main.ballX + rsp/2 && Mx > 50) 
 		  {
-		    ballX+= rsp;
+			  Main.ballX+= rsp;
 		  }
-		  else if (Mx < ballX - rsp/2 && Mx > 50) 
+		  else if (Mx < Main.ballX - rsp/2 && Mx > 50) 
 		  {
-		    ballX-= rsp;
+			  Main.ballX-= rsp;
 		  }
-		  if (My > ballY + rsp/2 && My > 50) 
+		  if (My > Main.ballY + rsp/2 && My > 50) 
 		  {
-		    ballY+= rsp;
+			  Main.ballY+= rsp;
 		  }
-		  else if (My < ballY - rsp/2 && My > 50) 
+		  else if (My < Main.ballY - rsp/2 && My > 50) 
 		  {
-		    ballY-= rsp;
+			  Main.ballY-= rsp;
 		  }
 		  
 		  parent.updatePixels();
 		  parent.noStroke();
 		  parent.fill(0, 0, 255);
-		  parent.ellipse(ballX, ballY, 20, 20);
+		  parent.ellipse(Main.ballX, Main.ballY, 40, 40);
 		  
-		  if(ballX > parent.width/2 + 70)
-		  {
-			  parent.rect(parent.width/2 + 130, parent.height/2 - 80, 60, 40);
-		  }
-		  
-		  if(ballX < parent.width/2 - 70)
-		  {  
-			  parent.rect(parent.width/2 - 190, parent.height/2 - 80, 60, 40);
-		  }
 
   }
 }

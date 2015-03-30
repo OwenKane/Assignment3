@@ -5,20 +5,27 @@ import processing.core.*;
 public class Main extends PApplet {
 
   Tracking tracking;
-  Object object;
+  Object[] object = new Object[3];
 
   public static Capture video;
+  public static int ballX;
+  public static int ballY;
   
   public void setup() {
 	  size(640, 480);
 	  video = new Capture(this, width, height, 30);
 	  tracking = new Tracking(this);
-	  object = new Object(this);
+	  
+	  for (int i = 0; i < object.length; i++) {
+		  object[i] = new Object(this);
+		} 
   }
 
   public void draw() {
 	  tracking.display();
-	  
-	  object.display();
+	  for (int i = 0; i < object.length; i++) {
+		  object[i].display();
+		  object[i].dection();
+	  }
   }
 }
