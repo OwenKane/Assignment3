@@ -11,6 +11,7 @@ public class Main extends PApplet {
   public static Capture video;
   public static int ballX;
   public static int ballY;
+  public static int option;
   
   public void setup() {
 	  size(640, 480);
@@ -24,11 +25,11 @@ public class Main extends PApplet {
   }
 
   public void draw() {
-	  screen.display();
 	  tracking.display();
 	  for (int i = 0; i < object.length; i++) {
 		  object[i].display();
 		  object[i].dection();
 	  }
+	  screen.display();
   }
 }
