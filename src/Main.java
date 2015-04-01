@@ -11,6 +11,8 @@ public class Main extends PApplet {
   public static Capture video;
   public static int ballX;
   public static int ballY;
+  public static boolean splash;
+  public static boolean end;
   
   public void setup() {
 	  size(640, 480);
@@ -21,15 +23,33 @@ public class Main extends PApplet {
 	  for (int i = 0; i < object.length; i++) {
 		  object[i] = new Object(this);
 	  }
+	  
+	  splash = true;
   }
 
   public void draw() {
-	  tracking.display();
-	  for (int i = 0; i < object.length; i++) {
-		  object[i].display();
-		  object[i].dection();
-	  }
 	  screen.display();
-	  frameRate(60);
+	  
+	  if(splash == false){
+		  tracking.display();
+		  for (int i = 0; i < object.length; i++) {
+			  object[i].display();
+			  object[i].dection();
+		  }
+	  }
+  }
+  
+  public void keyPressed() {
+	  if (key == CODED) {
+		    if (keyCode == RIGHT) {
+		    	screen.option = screen.option + 1;
+		    } else if (keyCode == LEFT) {
+		    	screen.option = screen.option - 1;
+		    } else if (keyCode == UP){
+		    	if(screen.option == 0 || screen.option == 2){
+		    		splash = false;
+		    	}
+		    }
+		}
   }
 }

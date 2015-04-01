@@ -36,7 +36,7 @@ public class Tracking {
 		    Main.video.read();
 		  }
 
-	  
+	  	  parent.frameRate(60);
 	      parent.loadPixels();
 		  Main.video.loadPixels();
 		  prevFrame.loadPixels();

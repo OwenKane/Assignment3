@@ -47,13 +47,12 @@ public class Object {
 		  reset = false;
 	  }
 	  
-	  
   }
   
   void dection(){
 	  dect = parent.dist(Main.ballX, Main.ballY, objX, objY);
 	  
-	  if(dect < sizeR){
+	  if(dect < sizeR && sizeG < 5){
 		  reset = true;
 	  }
 	  

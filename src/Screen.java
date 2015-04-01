@@ -5,26 +5,22 @@ public class Screen{
 	PApplet parent;
 	PImage startImg;
 	PImage endImg;
-	boolean splash;
-	boolean end;
 	int option;
+	boolean pressed;
+	int time;
 	
 	Screen(PApplet p) {
 	    parent = p;
 	    option = 1;
 	    startImg = parent.loadImage("start.png");
-	    endImg = parent.loadImage("end.png");
-	    splash = true;
-	    	    
+	    endImg = parent.loadImage("end.png");	
+	    time = 0;
 	}
 	
 	void display() {
-		
-		if(splash){
+		if(Main.splash){
 			parent.frameRate(10);
 			parent.image(startImg, 0, 0);
-			
-			keyPressed();
 			
 			if(option < 0){
 				option = 0;
@@ -33,7 +29,6 @@ public class Screen{
 				option = 2;
 			}
 			
-			parent.println("Option is"+ option);
 			parent.textSize(32);
 			
 			if(option == 0){//Changes the colour of the title that the user is currently over
@@ -70,18 +65,8 @@ public class Screen{
 
 		}
 		
-		if(end){
+		if(Main.end){
 			parent.image(endImg, 0, 0);
-		}
-	}
-	
-	void keyPressed() {
-		if (parent.key == parent.CODED) {
-		    if (parent.keyCode == parent.RIGHT) {
-		    	option = option + 1;
-		    } else if (parent.keyCode == parent.LEFT) {
-		    	option = option - 1;
-		    } 
 		}
 	}
 }
