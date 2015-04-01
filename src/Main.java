@@ -6,8 +6,9 @@ public class Main extends PApplet {
 
   Tracking tracking;
   Screen screen;
+  Score score;
   Object[] object = new Object[3];
-
+  
   public static Capture video;
   public static int ballX;
   public static int ballY;
@@ -18,6 +19,7 @@ public class Main extends PApplet {
 	  size(640, 480);
 	  video = new Capture(this, width, height, 30);
 	  
+	  score = new Score(this);
 	  tracking = new Tracking(this);
 	  screen = new Screen(this);
 	  for (int i = 0; i < object.length; i++) {
@@ -32,6 +34,7 @@ public class Main extends PApplet {
 	  
 	  if(splash == false){
 		  tracking.display();
+		  score.update();
 		  for (int i = 0; i < object.length; i++) {
 			  object[i].display();
 			  object[i].dection();
