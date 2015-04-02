@@ -45,7 +45,7 @@ public class Object {
 	  parent.ellipse(objX, objY, sizeG, sizeG);
 	  
 	  parent.fill(0, 255, 0);
-	  parent.ellipse(pointBX, pointBY, pointS, pointS);//
+	  parent.ellipse(pointBX, pointBY, pointS, pointS);
 	  
 	  if(sizeR > 100){
 		  reset = true;
@@ -66,7 +66,7 @@ public class Object {
 	  if(reset2){
 		  pointBX = parent.random(0, parent.width);
 		  pointBY = parent.random(0, parent.height);
-		  pointS = pointS;
+		  pointS = 40;
 		  reset2 = false;
 	  }
   }
@@ -80,6 +80,7 @@ public class Object {
 	  dect2 = parent.dist(Main.ballX, Main.ballY, pointBX, pointBY);	  
 	  if(dect2 < pointS){
 		  reset2 = true;
+		  Main.points = Main.points + 2;
 	  }
 	  
   }

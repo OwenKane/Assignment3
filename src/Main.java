@@ -12,6 +12,7 @@ public class Main extends PApplet {
   public static Capture video;
   public static int ballX;
   public static int ballY;
+  public static int points;
   public static boolean splash;
   public static boolean end;
   

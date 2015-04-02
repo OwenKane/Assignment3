@@ -7,7 +7,6 @@ class Score{
 	int savedTime;
 	int totalTime;
 	int passedTime;
-	int points;
 
 	Score(PApplet p) {
 	    parent = p;
@@ -21,11 +20,11 @@ class Score{
    
 		if (passedTime > totalTime)//Addes 1 to point every 2 seconds
 		{
-			points = points + 1;
+			Main.points = Main.points + 1;
 			savedTime = parent.second(); // Save the current time to restart the timer
 		}   
 		
 		parent.textSize(32);
-	    parent.text("Score: " + points, 10, 30);
+	    parent.text("Score: " + Main.points, 10, 30);
 	}
 }
