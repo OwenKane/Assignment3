@@ -29,7 +29,7 @@ class Score{
 	    parent.textSize(32);
 	    parent.text("Lives: " + Main.lives, 10, 65);
 	    
-	    if(Main.lives == 0){
+	    if(Main.lives < 1){
 	    	Main.splash = true;
 	    	Main.end = true;
 	    }

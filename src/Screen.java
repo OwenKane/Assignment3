@@ -69,6 +69,9 @@ public class Screen{
 		
 		if(Main.end){
 			parent.image(endImg, 0, 0);
+			parent.fill(255,0,0);
+			parent.textSize(70);
+	    	parent.text("SCORE: "+ Main.points, parent.width/2 - 150, parent.height / 2 + 120);
 		}
 		
 		if(Main.instruct){

@@ -27,10 +27,10 @@ public class Object {
     pointBY = parent.random(0, parent.height);
   }
 
-  void display() {
+  void enemy() {
 	  
 	  sizeR += .10; 
-	  pointS += .10;
+
 	  parent.fill(255, 0, 0);
 	  parent.ellipse(objX, objY, sizeR, sizeR);
 	  
@@ -44,15 +44,8 @@ public class Object {
 	  parent.fill(0, 255, 0);
 	  parent.ellipse(objX, objY, sizeG, sizeG);
 	  
-	  parent.fill(0, 255, 0);
-	  parent.ellipse(pointBX, pointBY, pointS, pointS);
-	  
 	  if(sizeR > 100){
 		  reset = true;
-	  }
-	  
-	  if(pointS > 100){
-		  reset2 = true;
 	  }
 	  
 	  if(reset){
@@ -61,6 +54,17 @@ public class Object {
 		  sizeR = 40;
 		  sizeG = 80;
 		  reset = false;
+	  }
+  }
+  
+  void friendly(){
+	  pointS += .10;
+	  
+	  parent.fill(0, 255, 0);
+	  parent.ellipse(pointBX, pointBY, pointS, pointS);
+	  
+	  if(pointS > 100){
+		  reset2 = true;
 	  }
 	  
 	  if(reset2){
