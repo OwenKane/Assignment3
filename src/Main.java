@@ -13,11 +13,14 @@ public class Main extends PApplet {
   public static int ballX;
   public static int ballY;
   public static int points;
+  public static int lives;
   public static boolean splash;
+  public static boolean instruct;
   public static boolean end;
   
   public void setup() {
 	  size(640, 480);
+	  lives = 5;
 	  video = new Capture(this, width, height, 30);
 	  
 	  score = new Score(this);
@@ -33,7 +36,7 @@ public class Main extends PApplet {
   public void draw() {
 	  screen.display();
 	  
-	  if(splash == false){
+	  if(splash == false && instruct == false){
 		  tracking.display();
 		  score.update();
 		  for (int i = 0; i < object.length; i++) {
@@ -52,7 +55,16 @@ public class Main extends PApplet {
 		    } else if (keyCode == UP){
 		    	if(screen.option == 0 || screen.option == 2){
 		    		splash = false;
+		    		instruct = false;
 		    	}
+		    	if(screen.option == 1){
+		    		splash = false;
+		    		instruct = true;
+		    	}
+		    	
+		    }else if (keyCode == DOWN && instruct == true){
+		    	splash = true;
+	    		instruct = false;
 		    }
 		}
   }

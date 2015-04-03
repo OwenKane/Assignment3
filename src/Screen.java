@@ -4,6 +4,7 @@ import processing.core.PImage;
 public class Screen{
 	PApplet parent;
 	PImage startImg;
+	PImage instructImg;
 	PImage endImg;
 	int option;
 	boolean pressed;
@@ -13,6 +14,7 @@ public class Screen{
 	    parent = p;
 	    option = 1;
 	    startImg = parent.loadImage("start.png");
+	    instructImg = parent.loadImage("instructions.png");
 	    endImg = parent.loadImage("end.png");	
 	    time = 0;
 	}
@@ -67,6 +69,10 @@ public class Screen{
 		
 		if(Main.end){
 			parent.image(endImg, 0, 0);
+		}
+		
+		if(Main.instruct){
+			parent.image(instructImg, 0, 0);
 		}
 	}
 }

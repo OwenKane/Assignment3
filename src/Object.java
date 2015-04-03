@@ -75,6 +75,7 @@ public class Object {
 	  dect = parent.dist(Main.ballX, Main.ballY, objX, objY);
 	  if(dect < sizeR && sizeG < 5){
 		  reset = true;
+		  Main.lives = Main.lives - 1;
 	  }
 	  
 	  dect2 = parent.dist(Main.ballX, Main.ballY, pointBX, pointBY);	  
