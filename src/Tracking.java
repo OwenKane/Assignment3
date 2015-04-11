@@ -26,7 +26,7 @@ public class Tracking {
 	rsp = 6;
   }
 
-  // Draw stripe
+ 
   void display() {
 	  
 	  if (Main.video.available()) {
@@ -51,10 +51,11 @@ public class Tracking {
 		    for (int y = 0; y < Main.video.height; y ++ ) 
 		    {
 		 
-		      int loc = x + y*Main.video.width;            
-		      int current = Main.video.pixels[loc];      
-		      int previous = prevFrame.pixels[loc]; 
-		 
+		      int loc = x + y*Main.video.width; 
+		      //parent.println("loc is "+ loc);
+		      int current = Main.video.pixels[loc];//what is the current color   
+		      int previous = prevFrame.pixels[loc];//what is the previous color
+		      //compare colors (previous vs. current)
 		      float r1 = parent.red(current); 
 		      float g1 = parent.green(current); 
 		      float b1 = parent.blue(current);
@@ -83,7 +84,7 @@ public class Tracking {
 		  { 
 		    Mx = Mx/ave;
 		    My = My/ave;
-		  }
+		  } 
 		  if (Mx > Main.ballX + rsp/2 && Mx > 50) 
 		  {
 			  Main.ballX+= rsp;

@@ -18,6 +18,10 @@ public class Main extends PApplet {
   public static boolean instruct;
   public static boolean end;
   int difficulty;
+
+	int[] data1;
+	String[] data2;
+	String[] stuff;
   
   public void setup() {
 	  size(640, 480);

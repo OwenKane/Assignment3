@@ -7,7 +7,11 @@ class Score{
 	int savedTime;
 	int totalTime;
 	int passedTime;
-
+	//int[] data;
+	
+	//String[] stuff = parent.loadStrings("data.txt");
+	//data =  Integer.parseInt(parent.split(stuff[0]));
+	
 	Score(PApplet p) {
 	    parent = p;
 		savedTime = parent.second();  
