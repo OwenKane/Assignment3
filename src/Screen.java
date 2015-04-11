@@ -34,34 +34,34 @@ public class Screen{
 			parent.textSize(32);
 			
 			if(option == 0){//Changes the colour of the title that the user is currently over
-				parent.fill(217, 218, 2);
+				parent.fill(204, 0, 0);
 		    }
 		    else{
-		    	parent.fill(237, 117, 36);
+		    	parent.fill(128, 0, 0);
 		    }
 			parent.rect(64, 320, 128, 80, 7);
-			parent.fill(0, 102, 153);
+			parent.fill(255, 204, 0);
 			parent.text("Normal", 70, 400 - 30);
 		      
 		    if(option == 1){
-		    	  parent.fill(217, 218, 2);
+		    	  parent.fill(204, 0, 0);
 		    }
 		    else{		     
-		    	  parent.fill(237, 117, 36);
+		    	  parent.fill(128, 0, 0);
 		    }
 		    parent.rect(256, 320, 128, 80, 7);
-		    parent.fill(0, 102, 153);
+		    parent.fill(255, 204, 0);
 		    parent.textSize(19);
 		    parent.text("Instructions", 264, 400 - 30);
 		      
 		    if(option == 2){
-		    	parent.fill(217, 218, 2);
+		    	parent.fill(204, 0, 0);
 		    }
 		    else{
-		    	parent.fill(237, 117, 36);
+		    	parent.fill(128, 0, 0);
 		     }
 		     parent.rect(448, 320, 128, 80, 7);
-		     parent.fill(0, 102, 153);
+		     parent.fill(255, 204, 0);
 		     parent.textSize(32);
 		     parent.text("Hard", 474, 400 - 30);
 
