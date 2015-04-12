@@ -37,9 +37,9 @@ public class Tracking {
 		  }
 
 	  	  parent.frameRate(60);
-	      parent.loadPixels();
+	      parent.loadPixels();//creates/loads data into the pixel[] array
 		  Main.video.loadPixels();
-		  prevFrame.loadPixels();
+		  prevFrame.loadPixels();//loads a pixel[] array with the info from the prevFrame Pimage
 		  
 		  Mx = 0;
 		  My = 0;
@@ -52,7 +52,8 @@ public class Tracking {
 		    {
 		 
 		      int loc = x + y*Main.video.width; 
-		      //parent.println("loc is "+ loc);
+		      //int loc = (Main.video.width - x - 1) + y*Main.video.width;// Reversing x to mirror the image
+		      
 		      int current = Main.video.pixels[loc];//what is the current color   
 		      int previous = prevFrame.pixels[loc];//what is the previous color
 		      //compare colors (previous vs. current)
@@ -64,6 +65,22 @@ public class Tracking {
 		      float b2 = parent.blue(previous);
 		      float diff = parent.dist(r1, g1, b1, r2, g2, b2);//Using dist to compare the colour changes to detect movement
 		
+		      /*
+		      
+		       
+		       
+		      
+		      
+		      float diff = parent.dist(r1, g1, b1, r2, g2, b2);
+		      float diff = parent.dist(r1, g1, b1, r2, g2, b2);
+		      float diff = parent.dist(r1, g1, b1, r2, g2, b2);
+		      float diff = parent.dist(r1, g1, b1, r2, g2, b2);
+		      float diff = parent.dist(r1, g1, b1, r2, g2, b2);
+		      float diff = parent.dist(r1, g1, b1, r2, g2, b2);
+		       */
+		      
+		      
+		      
 		 
 		      if (diff > threshold) 
 		      { 

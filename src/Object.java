@@ -28,7 +28,6 @@ public class Object {
   }
 
   void enemy() {
-	  
 	  sizeR += .10; 
 
 	  parent.fill(255, 0, 0);

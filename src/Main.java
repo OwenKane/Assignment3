@@ -1,17 +1,21 @@
 import processing.core.PApplet;
 import processing.video.*;
 import processing.core.*;
+import blobscanner.*;
 
 public class Main extends PApplet {
 
   Tracking tracking;
+  Blob blob;
   Screen screen;
   Score score;
   Object[] object = new Object[5];
   
   public static Capture video;
-  public static int ballX;
-  public static int ballY;
+  public static Detector bd;
+  public static Capture frame;
+  public static float ballX;
+  public static float ballY;
   public static int points;
   public static int lives;
   public static boolean splash;
@@ -19,17 +23,17 @@ public class Main extends PApplet {
   public static boolean end;
   int difficulty;
 
-	int[] data1;
-	String[] data2;
-	String[] stuff;
   
   public void setup() {
 	  size(640, 480);
 	  lives = 1;
 	  difficulty = 3;
+	  //video = new Capture(this, width, height, 30);
 	  video = new Capture(this, width, height, 30);
+	  bd = new Detector( this, 255 );
 	  
 	  score = new Score(this);
+	  blob = new Blob(this);
 	  tracking = new Tracking(this);
 	  screen = new Screen(this);
 	  for (int i = 0; i < object.length; i++) {
@@ -44,7 +48,8 @@ public class Main extends PApplet {
 	  screen.display();
 	  
 	  if(splash == false && instruct == false){
-		  tracking.display();
+		  //tracking.display();
+		  blob.display();
 		  score.update();
 		  for (int i = 0; i < difficulty; i++) {
 			  object[i].enemy();
