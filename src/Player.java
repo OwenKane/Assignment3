@@ -14,6 +14,7 @@ public class Player {
 	void display(){
 		parent.println("you made it to 3 x: "+ x);
 		parent.ellipse(x, y, 40, 40);
+		System.out.print("x is " + x);
 		parent.println("you made it to 3.2 y:"+ y);
 	}
 }

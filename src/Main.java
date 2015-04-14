@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+
 import processing.core.PApplet;
 import processing.video.Capture;
 import blobscanner.Detector;
@@ -64,11 +66,13 @@ public class Main extends PApplet {
 			  object[i].friendly();
 			  object[i].dection();
 		  }
-		  
+		  		  
+		  int total = players.size();
+		  println("Number of elemts in players"+ total);
 		  for(int i = 0; i < players.size(); i++){
 			  //println("you made it to 4");
-			  Player part = players.get(i);
-			  part.display();
+			  //Player part = players.get(i);
+			  //part.display();
 			  //println("you made it to 4.2");
 		  }
 	  }

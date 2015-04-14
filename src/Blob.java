@@ -25,19 +25,24 @@ public class Blob {
 		Main.bd.weightBlobs(true);
 		
 		int total = Main.bd.getBlobsNumber();
-		parent.println("total blobs is "+ total);
+		//parent.println("total blobs is "+ total);
 		for(int i = 0; i < Main.bd.getBlobsNumber(); i++)
         {
+			int t = 0;
             if(Main.bd.getBlobWeight(i) > 5000){
               PVector[] cornerA = Main.bd.getA();
               parent.fill(0,0,255);
-              
-              Main.ballX = cornerA[i].x;
-              Main.ballY = cornerA[i].y;
-              parent.ellipse( cornerA[i].x, cornerA[i].y, 40, 40);
+              t = t + 1;
+              Main.ballX = Main.bd.getBoxCentX(i);
+              Main.ballY = Main.bd.getBoxCentY(i);
+              parent.ellipse(Main.ballX, Main.ballY, 40, 40);
+              //Main.ballX = cornerA[i].x;
+              //Main.ballY = cornerA[i].y;
+              //parent.ellipse( cornerA[i].x, cornerA[i].y, 40, 40);
               //Player nPlayer = new Player(parent, cornerA[i].x, cornerA[i].y);
               //Main.players.add(nPlayer);
               //Main.players.add(new Player(parent, cornerA[i].x, cornerA[i].y));
+              //parent.println("Number of balls: " + t);
               
             }
         }
