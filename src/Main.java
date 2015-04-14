@@ -1,7 +1,7 @@
+import java.util.ArrayList;
 import processing.core.PApplet;
-import processing.video.*;
-import processing.core.*;
-import blobscanner.*;
+import processing.video.Capture;
+import blobscanner.Detector;
 
 public class Main extends PApplet {
 
@@ -9,7 +9,9 @@ public class Main extends PApplet {
   Blob blob;
   Screen screen;
   Score score;
-  Object[] object = new Object[5];
+  Object[] object = new Object[3];
+  Object2[] object2 = new Object2[5];
+  public static ArrayList<Player> players = new ArrayList<Player>();
   
   public static Capture video;
   public static Detector bd;
@@ -26,7 +28,7 @@ public class Main extends PApplet {
   
   public void setup() {
 	  size(640, 480);
-	  lives = 1;
+	  lives = 10;
 	  difficulty = 3;
 	  //video = new Capture(this, width, height, 30);
 	  video = new Capture(this, width, height, 30);
@@ -38,6 +40,9 @@ public class Main extends PApplet {
 	  screen = new Screen(this);
 	  for (int i = 0; i < object.length; i++) {
 		  object[i] = new Object(this);
+	  }
+	  for (int i = 0; i < object2.length; i++) {
+		  object2[i] = new Object2(this);
 	  }
 	  
 	  splash = true;
@@ -52,11 +57,19 @@ public class Main extends PApplet {
 		  blob.display();
 		  score.update();
 		  for (int i = 0; i < difficulty; i++) {
-			  object[i].enemy();
-			  object[i].dection();
+			  object2[i].enemy();
+			  object2[i].dection();
 		  }
 		  for (int i = 0; i < 3; i++) {
 			  object[i].friendly();
+			  object[i].dection();
+		  }
+		  
+		  for(int i = 0; i < players.size(); i++){
+			  //println("you made it to 4");
+			  Player part = players.get(i);
+			  part.display();
+			  //println("you made it to 4.2");
 		  }
 	  }
   }
@@ -86,7 +99,7 @@ public class Main extends PApplet {
 		    		splash = true;
 		    		instruct = false;
 		    		end = false;
-		    		lives = 1;
+		    		lives = 10;
 		    		points = 0;
 		    	}
 		    	

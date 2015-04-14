@@ -4,16 +4,12 @@ import processing.core.*;
 
 public class Object {
   PApplet parent;
-  float objX;
-  float objY;
   float pointBX;
   float pointBY;
   float pointS;
   float sizeR;
   float sizeG;
-  float dect;
   float dect2;
-  boolean reset;
   boolean reset2;
 
   Object(PApplet p) {
@@ -21,43 +17,13 @@ public class Object {
     sizeR = 40;
     sizeG = 80;
     pointS = 40;
-    objX = parent.random(0, parent.width);
-    objY = parent.random(0, parent.height);
+    
     pointBX = parent.random(0, parent.width);
     pointBY = parent.random(0, parent.height);
   }
 
-  void enemy() {
-	  sizeR += .10; 
-
-	  parent.fill(255, 0, 0);
-	  parent.ellipse(objX, objY, sizeR, sizeR);
-	  
-	  if(sizeG > 10){
-		  sizeG -= .20;
-	  }
-	  else{
-		  sizeG = 0;
-	  }
-	  
-	  parent.fill(0, 255, 0);
-	  parent.ellipse(objX, objY, sizeG, sizeG);
-	  
-	  if(sizeR > 100){
-		  reset = true;
-	  }
-	  
-	  if(reset){
-		  objX = parent.random(0, parent.width);
-		  objY = parent.random(0, parent.height);
-		  sizeR = 40;
-		  sizeG = 80;
-		  reset = false;
-	  }
-  }
-  
   void friendly(){
-	  pointS += .10;
+	  pointS += .40;
 	  
 	  parent.fill(0, 255, 0);
 	  parent.ellipse(pointBX, pointBY, pointS, pointS);
@@ -74,13 +40,7 @@ public class Object {
 	  }
   }
   
-  void dection(){
-	  dect = parent.dist(Main.ballX, Main.ballY, objX, objY);
-	  if(dect < sizeR && sizeG < 5){
-		  reset = true;
-		  Main.lives = Main.lives - 1;
-	  }
-	  
+  void dection(){	  
 	  dect2 = parent.dist(Main.ballX, Main.ballY, pointBX, pointBY);	  
 	  if(dect2 < pointS){
 		  reset2 = true;
