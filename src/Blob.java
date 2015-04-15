@@ -29,7 +29,7 @@ public class Blob {
 		
 		for(int i = 0; i < Main.bd.getBlobsNumber(); i++)//Loops to check every blob
         {
-            if(Main.bd.getBlobWeight(i) > 5000){//if a blob has a "weight" over 5000
+            if(Main.bd.getBlobWeight(i) > 3000){//if a blob has a "weight" over 5000
               parent.fill(0,0,255);
               Main.ballX = Main.bd.getBoxCentX(i);//sets the x, y cords to the center of the "blob"
               Main.ballY = Main.bd.getBoxCentY(i);
