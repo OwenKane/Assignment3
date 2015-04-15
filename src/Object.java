@@ -32,7 +32,7 @@ public class Object {
 		  reset2 = true;
 	  }
 	  
-	  if(reset2){
+	  if(reset2){//resets the the ball to a random cords and back to the default size;
 		  pointBX = parent.random(0, parent.width);
 		  pointBY = parent.random(0, parent.height);
 		  pointS = 40;
@@ -42,7 +42,7 @@ public class Object {
   
   void dection(){	  
 	  dect2 = parent.dist(Main.ballX, Main.ballY, pointBX, pointBY);	  
-	  if(dect2 < pointS){
+	  if(dect2 < pointS){//dects if the ball is touched by the player
 		  reset2 = true;
 		  Main.points = Main.points + 2;
 	  }

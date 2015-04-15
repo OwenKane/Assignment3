@@ -3,10 +3,10 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="img"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/Users/Owen/Desktop/College/Processing/processing-2.2.1/modes/java/libraries/video/library/gstreamer-java.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Owen/Desktop/College/Processing/processing-2.2.1/modes/java/libraries/video/library/jna.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Owen/Desktop/College/Processing/processing-2.2.1/modes/java/libraries/video/library/video.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Owen/Desktop/College/Processing/processing-2.2.1/core/library/core.jar"/>
 	<classpathentry kind="lib" path="blobscanner.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Owen/Documents/Processing/processing-2.2.1/core/library/core.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Owen/Documents/Processing/processing-2.2.1/modes/java/libraries/video/library/gstreamer-java.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Owen/Documents/Processing/processing-2.2.1/modes/java/libraries/video/library/jna.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Owen/Documents/Processing/processing-2.2.1/modes/java/libraries/video/library/video.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

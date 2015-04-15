@@ -32,9 +32,6 @@ public class Object2 {
 		  sizeG = 0;
 	  }
 	  
-	  //parent.fill(0, 255, 0);
-	  //parent.ellipse(objX, objY, sizeG, sizeG);
-	  
 	  if(sizeR > 100){
 		  reset = true;
 	  }

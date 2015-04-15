@@ -7,10 +7,6 @@ class Score{
 	int savedTime;
 	int totalTime;
 	int passedTime;
-	//int[] data;
-	
-	//String[] stuff = parent.loadStrings("data.txt");
-	//data =  Integer.parseInt(parent.split(stuff[0]));
 	
 	Score(PApplet p) {
 	    parent = p;
@@ -28,6 +24,7 @@ class Score{
 			savedTime = parent.second(); // Save the current time to restart the timer
 		}   
 		
+		parent.fill(255,255, 0);
 		parent.textSize(32);
 	    parent.text("Score: " + Main.points, 10, 30);
 	    parent.textSize(32);

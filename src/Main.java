@@ -7,13 +7,11 @@ import blobscanner.Detector;
 
 public class Main extends PApplet {
 
-  Tracking tracking;
   Blob blob;
   Screen screen;
   Score score;
   Object[] object = new Object[3];
   Object2[] object2 = new Object2[5];
-  public static ArrayList<Player> players = new ArrayList<Player>();
   
   public static Capture video;
   public static Detector bd;
@@ -32,13 +30,11 @@ public class Main extends PApplet {
 	  size(640, 480);
 	  lives = 10;
 	  difficulty = 3;
-	  //video = new Capture(this, width, height, 30);
 	  video = new Capture(this, width, height, 30);
 	  bd = new Detector( this, 255 );
 	  
 	  score = new Score(this);
 	  blob = new Blob(this);
-	  tracking = new Tracking(this);
 	  screen = new Screen(this);
 	  for (int i = 0; i < object.length; i++) {
 		  object[i] = new Object(this);
@@ -55,7 +51,6 @@ public class Main extends PApplet {
 	  screen.display();
 	  
 	  if(splash == false && instruct == false){
-		  //tracking.display();
 		  blob.display();
 		  score.update();
 		  for (int i = 0; i < difficulty; i++) {
@@ -65,16 +60,7 @@ public class Main extends PApplet {
 		  for (int i = 0; i < 3; i++) {
 			  object[i].friendly();
 			  object[i].dection();
-		  }
-		  		  
-		  int total = players.size();
-		  println("Number of elemts in players"+ total);
-		  for(int i = 0; i < players.size(); i++){
-			  //println("you made it to 4");
-			  //Player part = players.get(i);
-			  //part.display();
-			  //println("you made it to 4.2");
-		  }
+		  }		  
 	  }
   }
   
