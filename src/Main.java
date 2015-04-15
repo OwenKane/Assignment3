@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Collections;
-
 import processing.core.PApplet;
 import processing.video.Capture;
 import blobscanner.Detector;
@@ -16,11 +15,13 @@ public class Main extends PApplet {
   public static Capture video;
   public static Detector bd;
   public static Capture frame;
+  
   public static float ballX;
   public static float ballY;
   public static int points;
   public static int lives;
   public static boolean splash;
+  public static boolean start;
   public static boolean instruct;
   public static boolean end;
   int difficulty;
@@ -71,26 +72,29 @@ public class Main extends PApplet {
 		    } else if (keyCode == LEFT) {
 		    	screen.option = screen.option - 1;
 		    } else if (keyCode == UP){
-		    	if(screen.option == 0 && end == false){
+		    	if(screen.option == 0 && end == false && start == false){//start the game on normal
 		    		splash = false;
 		    		instruct = false;
 		    		difficulty = 3;
+		    		start = true;
 		    	}
-		    	if(screen.option == 2 && end == false){
+		    	if(screen.option == 2 && end == false && start == false){//start the game on hard
 		    		splash = false;
 		    		instruct = false;
 		    		difficulty = 5;
+		    		start = true;
 		    	}
-		    	if(screen.option == 1 && end == false){
+		    	if(screen.option == 1 && end == false && start == false){//The instruction screen
 		    		splash = false;
 		    		instruct = true;
 		    	}
-		    	if(end == true){
+		    	if(end == true){//game over screen
 		    		splash = true;
 		    		instruct = false;
 		    		end = false;
 		    		lives = 10;
 		    		points = 0;
+		    		start = false;
 		    	}
 		    	
 		    }else if (keyCode == DOWN && instruct == true){
